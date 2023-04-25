@@ -11,7 +11,7 @@ function Titulo(){
     })
     return(
         <ModeloTitulo>
-            <TituloNome>cadastro de tarefas</TituloNome>
+            <TituloNome>Cadastro de Tarefas</TituloNome>
             <TituloData>{data}</TituloData>
         </ModeloTitulo>
     )

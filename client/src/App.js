@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { TextSpace, Names, Aquele } from './components/styles/styles';
 import Titulo from './components/Titulo';
 import { useState } from 'react';
 function App() {
@@ -14,15 +15,15 @@ function App() {
 
   return (
     <div className="App">
-    <Titulo/>
-    <input
+    <Titulo/><br/>
+    <TextSpace
     value={newTask}
     onChange={(e)=>setNewTask(e.target.value)}
-    />
-    <button onClick={addTarefa}>Cadastrar</button>
-    <div>{
+    /><br/><br/>
+    <Aquele onClick={addTarefa}>Cadastrar</Aquele>
+    <Names>{
       tarefas.map(t=><p key={t}> {t} </p>)
-    }</div>
+    }</Names>
     </div>
   );
 }
