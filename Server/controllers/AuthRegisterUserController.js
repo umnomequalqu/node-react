@@ -1,5 +1,5 @@
 const User = require('../models/USUARIO')
-
+const bcrypt = require ('bcrypt');
 module.exports = class AuthRegisterUserController{
   static async init(req,res){
     res.send({message: "Bem vindo a nossa api!"})
@@ -32,5 +32,22 @@ module.exports = class AuthRegisterUserController{
     if(confirmPassword != password){
       return res.status(422).json({message: "a senha ou o email está errado"})
     }
+
+    const userExit = await User.findOne({email: email})
+    if(userExist){
+      return res.status(422).json({message: "já há uma conta com esse email"})
+    }
+    const hash = await bcrypt.genSalt(12)
+
+    const passwordHash = await bcrypt.hash(password, hash)
+
+    const user = new User({
+      name,
+      email,
+      age,
+      image,
+      password: passwordHash
+    })
+    
   }
 }
