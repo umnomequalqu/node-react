@@ -24,35 +24,35 @@ function Registrar() {
                 type ="text" 
                 id ="nome" 
                 value={user.name}
-                onChange{(e)=>setUser({...user,name: e.target.value})}
+                onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <label htmlFor="email">Email:</label>
                 <input 
                 type ="text" 
                 id ="email" 
                 value={user.email}
-                onChange{(e)=>setUser({...user,name: e.target.value})}
+                onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <label htmlFor="idade">Idade:</label>
                 <input 
                 type ="number" 
                 id ="idade" 
                 value={user.age}
-                onChange{(e)=>setUser({...user,name: e.target.value})}
+                onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <label htmlFor="senha">Senha:</label>
                 <input 
                 type ="password" 
                 id ="senha" 
                 value={user.password}
-                onChange{(e)=>setUser({...user,name: e.target.value})}
+                onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <label htmlFor="confirmPassword">Confirme sua senha:</label>
                 <input 
                 type ="password" 
                 id ="confirmPassword" 
                 value={user.confirmPassword}
-                onChange{(e)=>setUser({...user,name: e.target.value})}
+                onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <button type='submit'>Cadastrar</button>
                 </form>
