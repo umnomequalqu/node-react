@@ -1,31 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import { TextSpace, Names, Aquele } from './components/styles/styles';
-import Titulo from './components/Titulo';
-import { useState } from 'react';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <h1>Sou a rota principal</h1>
+  },
+  {
+    path: '/cadastro',
+    element: <h1>Sou a rota de cadastro</h1>
+  },
+])
+
 function App() {
-  const [tarefas,setTarefas] = useState([]);
-  const [newTask,setNewTask] = useState('');
-
-  const addTarefa=()=>{
-    let newTarefa = newTask;
-    setTarefas([...tarefas, newTarefa])
-    setNewTask('');
-  }
-
-  return (
-    <div className="App">
-    <Titulo/><br/>
-    <TextSpace
-    value={newTask}
-    onChange={(e)=>setNewTask(e.target.value)}
-    /><br/><br/>
-    <Aquele onClick={addTarefa}>Cadastrar</Aquele>
-    <Names>{
-      tarefas.map(t=><p key={t}> {t} </p>)
-    }</Names>
-    </div>
-  );
+  return(
+    <>
+      <RouterProvider router={router}/>
+    </>
+  )
 }
 
 export default App;
