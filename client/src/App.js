@@ -1,17 +1,6 @@
 import './App.css';
 import {RouterProvider, createBrowserRouter} from 'react-router-dom';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <h1>Sou a rota principal</h1>
-  },
-  {
-    path: '/cadastro',
-    element: <h1>Sou a rota de cadastro</h1>
-  },
-])
-
+import { Router } from 'react-router-dom';
 function App() {
   return(
     <>
