@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
+import Popup from '../Popup'
 
 function Registrar() {
     const [user,setUser] = useState({
@@ -10,15 +11,24 @@ function Registrar() {
         password: '',
         confirmPassword:''
     })
+    const [showCard, setShowCard] = useState(false);
     function cadastrarUsuario(){
         axios.post("http://localhost:8080/auth/register/user",user)
             .then(res=>console.log(res.data))
             .catch(erro=> console.log(erro))
     }
 
+    function envioFormulario(event){
+        event.preventDefault();
+        cadastrarUsuario(user);
+        setShowCard(true);
+        setTimeout(()=>{
+            setShowCard(false);
+        },3100)
+    }
     return(
         <div>
-            <form onSubmit={cadastrarUsuario(user)}>
+            <form onSubmit={envioFormulario}>
                 <label htmlFor="nome">Nome:</label>
                 <input 
                 type ="text" 
@@ -56,7 +66,10 @@ function Registrar() {
                 /><br/>
                 <button type='submit'>Cadastrar</button>
                 </form>
-            <button onClick={()=>cadastrarUsuario(user)}>Cadastrar</button>
+            {
+                showCard ?<Popup/> : null
+            }
+            
         </div>
     )
 }
