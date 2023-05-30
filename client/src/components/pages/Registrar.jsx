@@ -2,6 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
 import Popup from '../Popup'
+import { TextSpace,Names,Aquele } from '../styles/styles'
 
 function Registrar() {
     const [user,setUser] = useState({
@@ -27,50 +28,52 @@ function Registrar() {
         },3100)
     }
     return(
-        <div>
+        <Names>
             <form onSubmit={envioFormulario}>
-                <label htmlFor="nome">Nome:</label>
-                <input 
+                <label htmlFor="nome">Nome:</label><br/>
+                <TextSpace 
                 type ="text" 
                 id ="nome" 
                 value={user.name}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
-                /><br/>
-                <label htmlFor="email">Email:</label>
-                <input 
+                /><br/><br/>
+                <label htmlFor="email">Email:</label><br/>
+                <TextSpace 
                 type ="text" 
                 id ="email" 
                 value={user.email}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
-                /><br/>
-                <label htmlFor="idade">Idade:</label>
-                <input 
+                /><br/><br/>
+                <label htmlFor="idade">Idade:</label><br/>
+                <TextSpace 
                 type ="number" 
                 id ="idade" 
                 value={user.age}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
-                <label htmlFor="senha">Senha:</label>
-                <input 
+                <br/>
+                <label htmlFor="senha">Senha:</label><br/>
+                <TextSpace 
                 type ="password" 
                 id ="senha" 
                 value={user.password}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
-                <label htmlFor="confirmPassword">Confirme sua senha:</label>
-                <input 
+                <br/>
+                <label htmlFor="confirmPassword">Confirme sua senha:</label><br/>
+                <TextSpace 
                 type ="password" 
                 id ="confirmPassword" 
                 value={user.confirmPassword}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
-                /><br/>
-                <button type='submit'>Cadastrar</button>
+                /><br/><br/>
+                <Aquele type='submit'>Cadastrar</Aquele>
                 </form>
             {
                 showCard ?<Popup/> : null
             }
             
-        </div>
+        </Names>
     )
 }
 
