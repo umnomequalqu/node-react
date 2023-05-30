@@ -28,23 +28,23 @@ function Registrar() {
         },3100)
     }
     return(
-        <Names>
+        <div>
             <form onSubmit={envioFormulario}>
-                <label htmlFor="nome">Nome:</label><br/>
+                <Names htmlFor="nome">Nome:</Names><br/>
                 <TextSpace 
                 type ="text" 
                 id ="nome" 
                 value={user.name}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/><br/>
-                <label htmlFor="email">Email:</label><br/>
+                <Names htmlFor="email">Email:</Names><br/>
                 <TextSpace 
                 type ="text" 
                 id ="email" 
                 value={user.email}
                 onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/><br/>
-                <label htmlFor="idade">Idade:</label><br/>
+                <Names htmlFor="idade">Idade:</Names><br/>
                 <TextSpace 
                 type ="number" 
                 id ="idade" 
@@ -52,7 +52,7 @@ function Registrar() {
                 onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <br/>
-                <label htmlFor="senha">Senha:</label><br/>
+                <Names htmlFor="senha">Senha:</Names><br/>
                 <TextSpace 
                 type ="password" 
                 id ="senha" 
@@ -60,7 +60,7 @@ function Registrar() {
                 onChange={(e)=>setUser({...user,name: e.target.value})}
                 /><br/>
                 <br/>
-                <label htmlFor="confirmPassword">Confirme sua senha:</label><br/>
+                <Names htmlFor="confirmPassword">Confirme sua senha:</Names><br/>
                 <TextSpace 
                 type ="password" 
                 id ="confirmPassword" 
@@ -73,7 +73,7 @@ function Registrar() {
                 showCard ?<Popup/> : null
             }
             
-        </Names>
+        </div>
     )
 }
 

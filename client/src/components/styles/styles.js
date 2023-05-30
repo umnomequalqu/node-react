@@ -23,14 +23,11 @@ export const TextSpace = styled.input`
     width: 100%;
     border: 2px solid #002945;
 `;
-export const Names = styled.div`
+export const Names = styled.label`
     color: white;
-    border-radius: 18px;
     text-align: center;
     font-size: 14pt;
-    background-color: #001A2C;
-    font-family: helvetica;
-    box-shadow: 8px 8px 5px #00111C;
+    font-family: helvetica
 `;
 export const Aquele = styled.button`
     border-radius: 18px;

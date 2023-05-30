@@ -1,10 +1,25 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet,NavLink } from 'react-router-dom';
+import './Navbar.css'
 function Root() {
     return (
         <div>
-            Sou uma página principal
+            <nav>
+                <div>
+                <NavLink to='/cadastro'>
+                    Cadastro de Produtos
+                </NavLink>
+                <NavLink to='/register'>
+                    Criar conta
+                </NavLink>
+                <NavLink to='/login'>
+                    Logar
+                </NavLink>
+                </div>
+                <div>
 
+                </div>
+            </nav>
             <Outlet/>
         </div>
     )
