@@ -37,4 +37,9 @@ export const Aquele = styled.button`
     background-color: #002945;
     box-shadow: 8px 8px 5px #00111C;
 `;
+export const Isso = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+`;
  

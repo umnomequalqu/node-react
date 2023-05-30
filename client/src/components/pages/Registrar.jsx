@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import axios from 'axios'
 import Popup from '../Popup'
-import { TextSpace,Names,Aquele } from '../styles/styles'
+import { TextSpace,Names,Aquele,Isso } from '../styles/styles'
 
 function Registrar() {
     const [user,setUser] = useState({
@@ -28,7 +28,7 @@ function Registrar() {
         },3100)
     }
     return(
-        <div>
+        <Isso>
             <form onSubmit={envioFormulario}>
                 <Names htmlFor="nome">Nome:</Names><br/>
                 <TextSpace 
@@ -73,7 +73,7 @@ function Registrar() {
                 showCard ?<Popup/> : null
             }
             
-        </div>
+        </Isso>
     )
 }
 

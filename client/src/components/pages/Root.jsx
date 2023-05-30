@@ -6,13 +6,28 @@ function Root() {
         <div>
             <nav>
                 <div>
-                <NavLink to='/cadastro'>
+                <NavLink 
+                    to='/cadastro'
+                    className={({isActive})=>
+                        isActive ? 'link-clicado' : ''
+                    }
+                >
                     Cadastro de Produtos
                 </NavLink>
-                <NavLink to='/register'>
+                <NavLink 
+                to='/register'
+                className={({isActive})=>
+                        isActive ? 'link-clicado' : ''
+                    }
+                    >
                     Criar conta
                 </NavLink>
-                <NavLink to='/login'>
+                <NavLink  
+                to='/login'
+                className={({isActive})=>
+                        isActive ? 'link-clicado' : ''
+                    }
+                >
                     Logar
                 </NavLink>
                 </div>
@@ -20,7 +35,9 @@ function Root() {
 
                 </div>
             </nav>
-            <Outlet/>
+            <div className="conteudo">
+                <Outlet/>
+            </div>
         </div>
     )
 }
