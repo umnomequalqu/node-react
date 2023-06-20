@@ -18,7 +18,7 @@ function ProdutosForm(){
 
     function cadastrarProduto(produto){
         console.log(typeof(disponivel))
-        axios.post('http://localhost:8080/products',{disponivel,nome,desc,price})
+        axios.post('https://loja-aula.onrender.com/products',{disponivel,nome,desc,price})
             .then(res=>HTMLFormControlsCollection.log(res.data))
             .catch(erro=>console.log(erro))
     }    return(

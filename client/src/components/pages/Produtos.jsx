@@ -3,7 +3,7 @@ import axios from "axios";
 function Produtos(){
     const [produtos,setProdutos] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8080/products')
+        axios.get('https://loja-aula.onrender.com/products')
         .then(res=>setProdutos(res.data))
         .catch(err=>console.log(err))
     },[])
